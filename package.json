@@ -1,0 +1,23 @@
+{
+  "name": "automation-testing-api-pams",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API Testing and Automation with Jest and Axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:verbose": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "keywords": [],
+  "author": "Pams",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.3.0",
+    "jest": "^29.7.0"
+  }
+}
