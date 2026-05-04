@@ -11,4 +11,13 @@ export default {
   maxWorkers: 1,
   testTimeout: 30000,
   verbose: true,
+  reporters: [
+    'default',
+    ['jest-junit', {
+      outputDirectory: './reports',
+      outputName: 'junit.xml',
+      classname: '{classname}',
+      title: '{title}',
+    }]
+  ]
 };

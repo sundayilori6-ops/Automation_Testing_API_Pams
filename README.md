@@ -1,81 +1,90 @@
-# Automation API Testing
 
-A comprehensive API testing suite using Jest and Axios for automated testing of authentication and user endpoints.
+# Automation Testing API - PAMS
 
-## Project Overview
+![CI](https://github.com/sundayilori6-ops/Automation_Testing_API_Pams/actions/workflows/ci.yml/badge.svg)
 
-This project provides automated tests for:
-- **Authentication Tests** - User registration and login validation
-- **Protected Endpoints** - Authorization and token validation
-- **Password Reset** - Password reset request and verification flows
+## Overview
+Automated API test suite for the Zedu Chat API, built with **Jest** and **Axios**.
+Tests cover authentication, user management, and other API endpoints.
 
-## Prerequisites
+- npm
 
-- Node.js (v14 or higher)
-<<<<<<< HEAD
-- npm 
-=======
-- npm or yarn
->>>>>>> 339e6f5c31a6f982a827a94e0956632c3e5df854
-- Access to a target API with auth endpoints
+## Run Locally
 
-## Installation
-
-1. Clone the repository:
+### 1. Clone the repository
 ```bash
-git clone <repository-url>
-cd Automation\ API\ testing
+git clone https://github.com/sundayilori6-ops/Automation_Testing_API_Pams.git
+cd Automation_Testing_API_Pams
 ```
 
-2. Install dependencies:
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-3. Configure environment variables:
-Create a `.env` file in the root directory with the following variables:
-
-```env
-BASE_URL=https://your-api-url.com
-EMAIL=test@example.com
-PASSWORD=your-test-password
+### 3. Set up environment variables
+```bash
+cp .env.example .env
 ```
 
+Then open `.env` and fill in your values:
+```dotenv
+BASE_URL=https://api.zedu.chat/api/v1
+EMAIL=your_email_here
+PASSWORD=your_password_here
+```
 ## Project Structure
 
-```
+Automation_Testing_API_Pams/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                    # GitHub Actions CI pipeline
 ├── tests/
-│   ├── auth.test.js              # Authentication tests (register, login)
-│   ├── users.test.js             # Protected endpoint tests
-│   └── other-endpoints.test.js   # Password reset endpoint tests
+│   ├── auth.test.js                  # Authentication endpoint tests
+│   ├── users.test.js                 # User management tests
+│   └── other-endpoints.test.js       # Password reset endpoint tests
 ├── utils/
-│   ├── auth.js                   # Authentication helper functions
-│   └── emailGenerator.js         # Email generation utility
-├── jest.config.js                # Jest configuration
-├── package.json                  # Project dependencies
-└── .env                          # Environment variables (not tracked in git)
-```
+│   ├── auth.js                       # Auth helper utilities
+│   └── emailGenerator.js             # Email generation utility
+├── .env.example                      # Environment variable template
+├── jest.config.js                    # Jest configuration
+├── package.json
+└── README.md
 
-## Running Tests
-
-### Run all tests:
+### 4. Run the tests
 ```bash
 npm test
 ```
 
-### Run tests with verbose output:
+### Run with verbose output
 ```bash
 npm run test:verbose
 ```
 
-### Run tests with coverage:
+### Run with coverage
 ```bash
 npm run test:coverage
 ```
 
-## Test Coverage
+## CI/CD Pipeline
 
-The test suite includes:
+This project uses **GitHub Actions** for continuous integration.
+
+### Pipeline behaviour
+- Triggers automatically on every `push` and `pull_request` to `main`
+- Sets up Node.js 18 on a clean Ubuntu environment
+- Installs dependencies with `npm ci`
+- Runs the full Jest test suite
+- Generates a **JUnit XML** test report uploaded as a build artifact
+- **Pipeline fails if any test fails** — no silent skipping
+
+### Pipeline file
+Located at `.github/workflows/ci.yml`
+
+### View pipeline runs
+Go to the **Actions** tab on GitHub to see all pipeline runs and logs.
+
+## Test Coverage
 
 ### Authentication Tests (`auth.test.js`)
 - ✅ Register with valid credentials
@@ -86,7 +95,7 @@ The test suite includes:
 - ✅ Login with valid credentials
 - ✅ Login with invalid password
 
-### User/Protected Endpoints (`users.test.js`)
+### User / Protected Endpoints (`users.test.js`)
 - ✅ Access protected endpoint with valid token
 - ✅ Access protected endpoint without token
 - ✅ Access protected endpoint with malformed token
@@ -99,61 +108,56 @@ The test suite includes:
 - ✅ Verify password reset with invalid token
 - ✅ Reset password should not expose token
 
-## Dependencies
+## Environment Variables
 
-- **axios**: ^1.6.0 - HTTP client for API requests
-- **dotenv**: ^16.3.1 - Environment variable management
-- **jest**: ^29.7.0 - Testing framework
-- **@jest/globals**: ^30.3.0 - Jest global utilities
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `BASE_URL` | API base URL | Yes |
+| `EMAIL` | Test account email | Yes |
+| `PASSWORD` | Test account password | Yes |
+
+> In CI, these are stored as **GitHub Actions Secrets** and injected automatically into the pipeline. Never commit your `.env` file.
 
 ## Utilities
 
-### `getToken()` - [utils/auth.js](utils/auth.js)
-Authenticates using provided credentials and returns an access token.
+### `getToken()` — `utils/auth.js`
+Authenticates using credentials from `.env` and returns an access token.
+Handles multiple token response formats (`token`, `data.token`, `accessToken`, `data.accessToken`).
 
-**Features:**
-- Handles multiple token response formats (token, data.token, accessToken, data.accessToken)
-- Proper error handling for failed login attempts
+### `generateRandomEmail()` — `utils/emailGenerator.js`
+Generates random email addresses for registration tests.
+Returns: `pams{randomNumber}@gmail.com`
 
-### `generateRandomEmail()` - [utils/emailGenerator.js](utils/emailGenerator.js)
-Generates random email addresses for testing registration.
+## Test Reports
 
-**Returns:** `pams{randomNumber}@gmail.com`
-
-## Configuration
-
-### Jest Config (`jest.config.js`)
-- **Test Environment**: Node.js
-- **Test Timeout**: 30 seconds
-- **Max Workers**: 50% of available cores
-- **Verbose**: Enabled for detailed output
+JUnit XML reports are generated on every CI run and uploaded as a downloadable artifact named `jest-junit-report`.
 
 ## Troubleshooting
 
-### Tests fail with "Base URL is undefined"
+**Tests fail with "Base URL is undefined"**
 Ensure your `.env` file is properly configured with all required variables.
 
-### Token-related errors
-Verify that:
-- Your API credentials in `.env` are correct
-- The API is accessible and running
-- The token response format matches one of the expected formats in `utils/auth.js`
+**Token-related errors**
+- Verify your API credentials in `.env` are correct
+- Confirm the API is accessible and running
+- Check the token response format matches one of the expected formats in `utils/auth.js`
 
-### Connection timeouts
+**Connection timeouts**
 - Check if the API endpoint is reachable
 - Increase `testTimeout` in `jest.config.js` if needed
-- Verify network connectivity
 
-## Notes
+## Dependencies
 
-- The `.env` file should never be committed to version control (included in `.gitignore`)
-- Tests use random email generation for registration tests
-- All tests support error handling for various HTTP status codes
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `axios` | ^1.6.0 | HTTP client for API requests |
+| `dotenv` | ^16.3.1 | Environment variable management |
+| `jest` | ^29.7.0 | Testing framework |
+| `@jest/globals` | ^30.3.0 | Jest global utilities |
+| `jest-junit` | ^16.0.0 | JUnit XML report generation |
 
 ## License
-
 ISC
 
 ## Author
-
 Pams
