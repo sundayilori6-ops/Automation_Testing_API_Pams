@@ -6,13 +6,15 @@ import { generateRandomEmail } from '../utils/emailGenerator.js';
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const BASE_URL = process.env.BASE_URL;
+const REGISTER_EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
 
 describe('Auth API Tests', () => {
 
   test('Register with valid credentials', async () => {
     const res = await axios.post(`${BASE_URL}/auth/register`, {
       email: generateRandomEmail(),
-      password: process.env.PASSWORD,
+      password: PASSWORD,
       name: 'New User'
     });
     expect(res.status).toBe(201);
@@ -36,7 +38,7 @@ describe('Auth API Tests', () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/register`, {
         email: 'invalid-email',
-        password: process.env.PASSWORD,
+        password: PASSWORD,
         name: 'User'
       });
       expect([400, 422]).toContain(res.status);
@@ -50,11 +52,11 @@ describe('Auth API Tests', () => {
   test('Register with existing email', async () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/register`, {
-        email: process.env.EMAIL,
-        password: process.env.PASSWORD,
+        email: REGISTER_EMAIL,
+        password: PASSWORD,
         name: 'User'
       });
-      expect([400, 409, 200]).toContain(res.status);
+      expect([200, 400, 409]).toContain(res.status);
     } catch (err) {
       if (err.response) {
         expect([400, 409, 422]).toContain(err.response.status);
@@ -80,8 +82,8 @@ describe('Auth API Tests', () => {
   test('Login with valid credentials', async () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/login`, {
-        email: process.env.EMAIL,
-        password: process.env.PASSWORD
+        email: REGISTER_EMAIL,
+        password: PASSWORD
       });
       expect(res.status).toBe(200);
       expect(res.data).toBeDefined();
@@ -95,7 +97,7 @@ describe('Auth API Tests', () => {
   test('Login with invalid password', async () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/login`, {
-        email: process.env.EMAIL,
+        email: REGISTER_EMAIL,
         password: 'wrongpassword'
       });
       expect([400, 401]).toContain(res.status);
@@ -123,7 +125,7 @@ describe('Auth API Tests', () => {
   test('Login with empty password', async () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/login`, {
-        email: process.env.EMAIL,
+        email: REGISTER_EMAIL,
         password: ''
       });
       expect(res.status).toBe(400);
@@ -158,7 +160,7 @@ describe('Auth API Tests', () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/register`, {
         email: generateRandomEmail(),
-        password: process.env.PASSWORD
+        password: PASSWORD
       });
       expect([200, 201, 400, 422]).toContain(res.status);
     } catch (err) {
@@ -172,7 +174,7 @@ describe('Auth API Tests', () => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/register`, {
         email: 12345,
-        password: process.env.PASSWORD,
+        password: PASSWORD,
         name: 'User'
       });
       expect([400, 422]).toContain(res.status);
@@ -203,8 +205,8 @@ describe('Auth API Tests', () => {
     try {
       const res = await axios.get(`${BASE_URL}/auth/login`, {
         params: {
-          email: process.env.EMAIL,
-          password: process.env.PASSWORD
+          email: REGISTER_EMAIL,
+          password: PASSWORD
         }
       });
       expect([400, 404, 405, 422]).toContain(res.status);

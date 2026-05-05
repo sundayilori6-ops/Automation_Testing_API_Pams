@@ -94,6 +94,13 @@ Go to the **Actions** tab on GitHub to see all pipeline runs and logs.
 - ✅ Register with empty password
 - ✅ Login with valid credentials
 - ✅ Login with invalid password
+- ✅ Login with unregistered email
+- ✅ Login with empty password
+- ✅ Logout with valid token
+- ✅ Register with missing required field (name)
+- ✅ Register with invalid data type (number for email)
+- ✅ Register with extremely long password
+- ✅ Login with invalid HTTP method (GET instead of POST)
 
 ### User / Protected Endpoints (`users.test.js`)
 - ✅ Access protected endpoint with valid token
@@ -103,8 +110,8 @@ Go to the **Actions** tab on GitHub to see all pipeline runs and logs.
 - ✅ Valid token returns user data
 
 ### Password Reset (`other-endpoints.test.js`)
-- ✅ Request password reset with registered email
-- ✅ Request password reset with unregistered email
+- ✅ Verify password reset with registered email
+- ✅ Verify password reset with unregistered email
 - ✅ Verify password reset with invalid token
 - ✅ Reset password should not expose token
 
@@ -130,7 +137,7 @@ Returns: `pams{randomNumber}@gmail.com`
 
 ## Test Reports
 
-JUnit XML reports are generated on every CI run and uploaded as a downloadable artifact named `jest-junit-report`.
+JUnit XML reports are generated on every CI run and uploaded as a downloadable artifact named `junit-report`.
 
 ## Troubleshooting
 
@@ -153,7 +160,6 @@ Ensure your `.env` file is properly configured with all required variables.
 | `axios` | ^1.6.0 | HTTP client for API requests |
 | `dotenv` | ^16.3.1 | Environment variable management |
 | `jest` | ^29.7.0 | Testing framework |
-| `@jest/globals` | ^30.3.0 | Jest global utilities |
 | `jest-junit` | ^16.0.0 | JUnit XML report generation |
 
 ## License

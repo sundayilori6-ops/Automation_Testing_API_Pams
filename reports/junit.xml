@@ -1,55 +1,367 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="23" failures="0" errors="0" time="6.147">
-  <testsuite name="User / Protected API Tests" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:08" time="1.679" tests="5">
-    <testcase classname="User / Protected API Tests Access protected endpoint with valid token" name="User / Protected API Tests Access protected endpoint with valid token" time="0.586">
+<testsuites name="jest tests" tests="23" failures="23" errors="0" time="18.412">
+  <testsuite name="Auth API Tests" errors="0" failures="14" skipped="0" timestamp="2026-05-05T10:08:32" time="17.483" tests="14">
+    <testcase classname="Auth API Tests Register with valid credentials" name="Auth API Tests Register with valid credentials" time="15.55">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:15:17)</failure>
     </testcase>
-    <testcase classname="User / Protected API Tests Access protected endpoint with no token" name="User / Protected API Tests Access protected endpoint with no token" time="0.162">
+    <testcase classname="Auth API Tests Register with empty fields" name="Auth API Tests Register with empty fields" time="1.322">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:26:19)</failure>
     </testcase>
-    <testcase classname="User / Protected API Tests Access protected endpoint with malformed token" name="User / Protected API Tests Access protected endpoint with malformed token" time="0.162">
+    <testcase classname="Auth API Tests Register with invalid email format" name="Auth API Tests Register with invalid email format" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:39:19)</failure>
     </testcase>
-    <testcase classname="User / Protected API Tests Access protected endpoint with expired token" name="User / Protected API Tests Access protected endpoint with expired token" time="0.162">
+    <testcase classname="Auth API Tests Register with existing email" name="Auth API Tests Register with existing email" time="0.004">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:54:19)</failure>
     </testcase>
-    <testcase classname="User / Protected API Tests Valid token returns user data" name="User / Protected API Tests Valid token returns user data" time="0.167">
+    <testcase classname="Auth API Tests Register with empty password" name="Auth API Tests Register with empty password" time="0.006">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:69:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Login with valid credentials" name="Auth API Tests Login with valid credentials" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:84:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Login with invalid password" name="Auth API Tests Login with invalid password" time="0.004">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:99:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Login with unregistered email" name="Auth API Tests Login with unregistered email" time="0.002">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:113:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Login with empty password" name="Auth API Tests Login with empty password" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:127:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Logout with valid token" name="Auth API Tests Logout with valid token" time="0.005">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at getToken (C:\Users\Pams\Automation API testing\utils\auth.js:13:17)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:142:21)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Register with missing required field (name)" name="Auth API Tests Register with missing required field (name)" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:161:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Register with invalid data type (number for email)" name="Auth API Tests Register with invalid data type (number for email)" time="0.002">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:175:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Register with extremely long password)" name="Auth API Tests Register with extremely long password)" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:191:19)</failure>
+    </testcase>
+    <testcase classname="Auth API Tests Login with invalid HTTP method (GET instead of POST)" name="Auth API Tests Login with invalid HTTP method (GET instead of POST)" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\auth.test.js:206:19)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Password Reset Endpoints" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:10" time="0.824" tests="4">
-    <testcase classname="Password Reset Endpoints verify password reset with registered email" name="Password Reset Endpoints verify password reset with registered email" time="0.184">
+  <testsuite name="User / Protected API Tests" errors="0" failures="5" skipped="0" timestamp="2026-05-05T10:08:50" time="0.223" tests="5">
+    <testcase classname="User / Protected API Tests Access protected endpoint with valid token" name="User / Protected API Tests Access protected endpoint with valid token" time="0.021">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at getToken (C:\Users\Pams\Automation API testing\utils\auth.js:13:17)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\users.test.js:14:21)</failure>
     </testcase>
-    <testcase classname="Password Reset Endpoints verify password reset with unregistered email" name="Password Reset Endpoints verify password reset with unregistered email" time="0.158">
+    <testcase classname="User / Protected API Tests Access protected endpoint with no token" name="User / Protected API Tests Access protected endpoint with no token" time="0.002">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\users.test.js:34:19)</failure>
     </testcase>
-    <testcase classname="Password Reset Endpoints Verify password reset with invalid token" name="Password Reset Endpoints Verify password reset with invalid token" time="0.159">
+    <testcase classname="User / Protected API Tests Access protected endpoint with malformed token" name="User / Protected API Tests Access protected endpoint with malformed token" time="0.002">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\users.test.js:45:19)</failure>
     </testcase>
-    <testcase classname="Password Reset Endpoints Reset password should not expose token" name="Password Reset Endpoints Reset password should not expose token" time="0.16">
+    <testcase classname="User / Protected API Tests Access protected endpoint with expired token" name="User / Protected API Tests Access protected endpoint with expired token" time="0.003">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:521:24)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\users.test.js:58:19)</failure>
+    </testcase>
+    <testcase classname="User / Protected API Tests Valid token returns user data" name="User / Protected API Tests Valid token returns user data" time="0.002">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at getToken (C:\Users\Pams\Automation API testing\utils\auth.js:13:17)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\users.test.js:71:21)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Auth API Tests" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:11" time="3.403" tests="14">
-    <testcase classname="Auth API Tests Register with valid credentials" name="Auth API Tests Register with valid credentials" time="0.518">
+  <testsuite name="Password Reset Endpoints" errors="0" failures="4" skipped="0" timestamp="2026-05-05T10:08:50" time="0.174" tests="4">
+    <testcase classname="Password Reset Endpoints Request password reset with registered email" name="Password Reset Endpoints Request password reset with registered email" time="0.014">
+      <failure>Error: getaddrinfo ENOTFOUND api.zedu.chat
+    at AxiosError.from (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\AxiosError.js:7:24)
+    at RedirectableRequest.handleRequestError (C:\Users\Pams\Automation API testing\node_modules\axios\lib\adapters\http.js:943:27)
+    at RedirectableRequest.emit (node:events:509:20)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (C:\Users\Pams\Automation API testing\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:20)
+    at emitErrorEvent (node:_http_client:109:11)
+    at TLSSocket.socketErrorListener (node:_http_client:593:5)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\Pams\Automation API testing\node_modules\axios\lib\core\Axios.js:46:41)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\other-endpoints.test.js:15:19)</failure>
     </testcase>
-    <testcase classname="Auth API Tests Register with empty fields" name="Auth API Tests Register with empty fields" time="0.164">
+    <testcase classname="Password Reset Endpoints Request password reset with unregistered email" name="Password Reset Endpoints Request password reset with unregistered email" time="0.003">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;status&apos;)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\other-endpoints.test.js:37:49)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)</failure>
     </testcase>
-    <testcase classname="Auth API Tests Register with invalid email format" name="Auth API Tests Register with invalid email format" time="0.16">
+    <testcase classname="Password Reset Endpoints Verify password reset with invalid token" name="Password Reset Endpoints Verify password reset with invalid token" time="0.003">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;status&apos;)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\other-endpoints.test.js:49:64)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)</failure>
     </testcase>
-    <testcase classname="Auth API Tests Register with existing email" name="Auth API Tests Register with existing email" time="0.506">
-    </testcase>
-    <testcase classname="Auth API Tests Register with empty password" name="Auth API Tests Register with empty password" time="0.162">
-    </testcase>
-    <testcase classname="Auth API Tests Login with valid credentials" name="Auth API Tests Login with valid credentials" time="0.159">
-    </testcase>
-    <testcase classname="Auth API Tests Login with invalid password" name="Auth API Tests Login with invalid password" time="0.159">
-    </testcase>
-    <testcase classname="Auth API Tests Login with unregistered email" name="Auth API Tests Login with unregistered email" time="0.163">
-    </testcase>
-    <testcase classname="Auth API Tests Login with empty password" name="Auth API Tests Login with empty password" time="0.162">
-    </testcase>
-    <testcase classname="Auth API Tests Logout with valid token" name="Auth API Tests Logout with valid token" time="0.165">
-    </testcase>
-    <testcase classname="Auth API Tests Register with missing required field (name)" name="Auth API Tests Register with missing required field (name)" time="0.44">
-    </testcase>
-    <testcase classname="Auth API Tests Register with invalid data type (number for email)" name="Auth API Tests Register with invalid data type (number for email)" time="0.161">
-    </testcase>
-    <testcase classname="Auth API Tests Register with extremely long password)" name="Auth API Tests Register with extremely long password)" time="0.16">
-    </testcase>
-    <testcase classname="Auth API Tests Login with invalid HTTP method (GET instead of POST)" name="Auth API Tests Login with invalid HTTP method (GET instead of POST)" time="0.163">
+    <testcase classname="Password Reset Endpoints Reset password should NOT expose token in response" name="Password Reset Endpoints Reset password should NOT expose token in response" time="0.002">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;data&apos;)
+    at Object.&lt;anonymous&gt; (C:\Users\Pams\Automation API testing\tests\other-endpoints.test.js:66:27)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)</failure>
     </testcase>
   </testsuite>
 </testsuites>
