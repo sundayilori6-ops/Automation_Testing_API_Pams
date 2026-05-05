@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="23" failures="0" errors="0" time="6.147">
+  <testsuite name="User / Protected API Tests" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:08" time="1.679" tests="5">
+    <testcase classname="User / Protected API Tests Access protected endpoint with valid token" name="User / Protected API Tests Access protected endpoint with valid token" time="0.586">
+    </testcase>
+    <testcase classname="User / Protected API Tests Access protected endpoint with no token" name="User / Protected API Tests Access protected endpoint with no token" time="0.162">
+    </testcase>
+    <testcase classname="User / Protected API Tests Access protected endpoint with malformed token" name="User / Protected API Tests Access protected endpoint with malformed token" time="0.162">
+    </testcase>
+    <testcase classname="User / Protected API Tests Access protected endpoint with expired token" name="User / Protected API Tests Access protected endpoint with expired token" time="0.162">
+    </testcase>
+    <testcase classname="User / Protected API Tests Valid token returns user data" name="User / Protected API Tests Valid token returns user data" time="0.167">
+    </testcase>
+  </testsuite>
+  <testsuite name="Password Reset Endpoints" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:10" time="0.824" tests="4">
+    <testcase classname="Password Reset Endpoints verify password reset with registered email" name="Password Reset Endpoints verify password reset with registered email" time="0.184">
+    </testcase>
+    <testcase classname="Password Reset Endpoints verify password reset with unregistered email" name="Password Reset Endpoints verify password reset with unregistered email" time="0.158">
+    </testcase>
+    <testcase classname="Password Reset Endpoints Verify password reset with invalid token" name="Password Reset Endpoints Verify password reset with invalid token" time="0.159">
+    </testcase>
+    <testcase classname="Password Reset Endpoints Reset password should not expose token" name="Password Reset Endpoints Reset password should not expose token" time="0.16">
+    </testcase>
+  </testsuite>
+  <testsuite name="Auth API Tests" errors="0" failures="0" skipped="0" timestamp="2026-05-04T10:58:11" time="3.403" tests="14">
+    <testcase classname="Auth API Tests Register with valid credentials" name="Auth API Tests Register with valid credentials" time="0.518">
+    </testcase>
+    <testcase classname="Auth API Tests Register with empty fields" name="Auth API Tests Register with empty fields" time="0.164">
+    </testcase>
+    <testcase classname="Auth API Tests Register with invalid email format" name="Auth API Tests Register with invalid email format" time="0.16">
+    </testcase>
+    <testcase classname="Auth API Tests Register with existing email" name="Auth API Tests Register with existing email" time="0.506">
+    </testcase>
+    <testcase classname="Auth API Tests Register with empty password" name="Auth API Tests Register with empty password" time="0.162">
+    </testcase>
+    <testcase classname="Auth API Tests Login with valid credentials" name="Auth API Tests Login with valid credentials" time="0.159">
+    </testcase>
+    <testcase classname="Auth API Tests Login with invalid password" name="Auth API Tests Login with invalid password" time="0.159">
+    </testcase>
+    <testcase classname="Auth API Tests Login with unregistered email" name="Auth API Tests Login with unregistered email" time="0.163">
+    </testcase>
+    <testcase classname="Auth API Tests Login with empty password" name="Auth API Tests Login with empty password" time="0.162">
+    </testcase>
+    <testcase classname="Auth API Tests Logout with valid token" name="Auth API Tests Logout with valid token" time="0.165">
+    </testcase>
+    <testcase classname="Auth API Tests Register with missing required field (name)" name="Auth API Tests Register with missing required field (name)" time="0.44">
+    </testcase>
+    <testcase classname="Auth API Tests Register with invalid data type (number for email)" name="Auth API Tests Register with invalid data type (number for email)" time="0.161">
+    </testcase>
+    <testcase classname="Auth API Tests Register with extremely long password)" name="Auth API Tests Register with extremely long password)" time="0.16">
+    </testcase>
+    <testcase classname="Auth API Tests Login with invalid HTTP method (GET instead of POST)" name="Auth API Tests Login with invalid HTTP method (GET instead of POST)" time="0.163">
+    </testcase>
+  </testsuite>
+</testsuites>

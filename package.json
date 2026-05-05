@@ -5,9 +5,9 @@
   "description": "API Testing and Automation with Jest and Axios",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:verbose": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+    "test": "jest --runInBand",
+    "test:verbose": "jest --runInBand --verbose",
+    "test:coverage": "jest --runInBand --coverage"
   },
   "keywords": [],
   "author": "Pams",
@@ -17,8 +17,22 @@
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "@jest/globals": "^30.3.0",
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "testMatch": ["**/tests/**/*.test.js"],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "reports",
+          "outputName": "junit.xml"
+        }
+      ]
+    ]
   }
 }

@@ -24,16 +24,15 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: node --experimental-vm-modules node_modules/jest/bin/jest.js
+        run: npm test
         env:
-          NODE_OPTIONS: --experimental-vm-modules
           BASE_URL: ${{ secrets.BASE_URL }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Upload test report
-        uses: actions/upload-artifact@v4
         if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: jest-junit-report
-          path: reports/junit.xml
+          name: junit-report
+          path: reports
